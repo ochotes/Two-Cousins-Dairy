@@ -21,12 +21,19 @@ Open [http://localhost:3000](http://localhost:3000). You'll be redirected to `/l
 
 ## Admin account
 
-There is no public sign-up — this is a single-admin app. Create (or reset) the
-one login by running:
+There is no public sign-up — this is a single-admin app.
 
-```bash
-npx convex run seed:seedAdmin '{"email":"you@example.com","password":"a-strong-password"}'
-```
+- **First-time setup:** create the one login by running
+  ```bash
+  npx convex run seed:seedAdmin '{"email":"you@example.com","password":"a-strong-password"}'
+  ```
+- **Changing your password day-to-day:** once signed in, use "Change
+  Password" in the sidebar — it asks for your current password first.
+- **Locked out / forgot it:** reset it from the CLI without needing the old
+  one:
+  ```bash
+  npx convex run seed:forceSetPassword '{"email":"you@example.com","password":"a-new-password"}'
+  ```
 
 ## Project layout
 

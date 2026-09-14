@@ -3,8 +3,9 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useAuthActions } from "@convex-dev/auth/react";
-import { SVGProps } from "react";
+import { SVGProps, useState } from "react";
 import { cn } from "@/lib/utils";
+import { ChangePasswordModal } from "@/components/layout/ChangePasswordModal";
 
 function IconBase(props: SVGProps<SVGSVGElement>) {
   return (
@@ -86,6 +87,7 @@ const NAV_ITEMS = [
 export function Sidebar() {
   const pathname = usePathname();
   const { signOut } = useAuthActions();
+  const [changePasswordOpen, setChangePasswordOpen] = useState(false);
 
   return (
     <aside className="flex h-screen w-56 shrink-0 flex-col border-r border-border">
@@ -118,7 +120,13 @@ export function Sidebar() {
           );
         })}
       </nav>
-      <div className="border-t border-border p-3">
+      <div className="space-y-0.5 border-t border-border p-3">
+        <button
+          onClick={() => setChangePasswordOpen(true)}
+          className="flex w-full items-center gap-2.5 rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+        >
+          Change Password
+        </button>
         <button
           onClick={() => void signOut()}
           className="flex w-full items-center gap-2.5 rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
@@ -126,6 +134,10 @@ export function Sidebar() {
           Sign out
         </button>
       </div>
+      <ChangePasswordModal
+        open={changePasswordOpen}
+        onClose={() => setChangePasswordOpen(false)}
+      />
     </aside>
   );
 }

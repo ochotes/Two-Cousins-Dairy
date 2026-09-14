@@ -8,6 +8,7 @@
  * @module
  */
 
+import type * as account from "../account.js";
 import type * as activity from "../activity.js";
 import type * as auth from "../auth.js";
 import type * as breeding from "../breeding.js";
@@ -25,6 +26,7 @@ import type {
 } from "convex/server";
 
 declare const fullApi: ApiFromModules<{
+  account: typeof account;
   activity: typeof activity;
   auth: typeof auth;
   breeding: typeof breeding;
