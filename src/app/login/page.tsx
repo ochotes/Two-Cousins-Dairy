@@ -3,6 +3,7 @@
 import { useAuthActions } from "@convex-dev/auth/react";
 import { useRouter } from "next/navigation";
 import { motion } from "motion/react";
+import Image from "next/image";
 import { FormEvent, useState } from "react";
 
 export default function LoginPage() {
@@ -36,20 +37,15 @@ export default function LoginPage() {
         transition={{ duration: 0.25, ease: "easeOut" }}
       >
         <div className="mb-8 text-center">
-          <div className="mx-auto mb-4 flex h-10 w-10 items-center justify-center rounded border border-border bg-card text-accent">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              className="h-5 w-5"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M4 10c0-2.5 1.5-4 3.5-4 1 0 1.7.4 2.5 1.2.8-.8 1.5-1.2 2.5-1.2s1.7.4 2.5 1.2c.8-.8 1.5-1.2 2.5-1.2 2 0 3.5 1.5 3.5 4 0 4-3 8-8.5 10.5C7 18 4 14 4 10Z"
-              />
-            </svg>
+          <div className="mx-auto mb-4 h-14 w-14 overflow-hidden rounded-full border border-border">
+            <Image
+              src="/cow.jpg"
+              alt=""
+              width={112}
+              height={112}
+              className="h-full w-full object-cover"
+              priority
+            />
           </div>
           <h1 className="text-lg font-semibold text-foreground">
             Two Cousins Dairy
