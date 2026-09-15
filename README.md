@@ -35,6 +35,14 @@ There is no public sign-up — this is a single-admin app.
   npx convex run seed:forceSetPassword '{"email":"you@example.com","password":"a-new-password"}'
   ```
 
+## Assets
+
+`src/app/icon.jpg` (browser tab icon) and `public/cow.jpg` (login page)
+are cropped from ["Jersey cow, close-up"](https://www.flickr.com/photos/87434398@N00/188474595/)
+by Jared and Corin, via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Jersey_cow,_close-up.jpg),
+licensed [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/). Swap
+either file for your own photo whenever you like — no license concerns once removed.
+
 ## Project layout
 
 - `convex/schema.ts` — cows, vaccinations, heatEvents, calvings, activityLog
